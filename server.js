@@ -23,7 +23,9 @@ app.use('/api/v1/auth',userRoutes);
 app.use('/api/v1/portfolio',portfolioRoutes);
 app.use('/api/v1/feedback',feedbackRoutes);
 
-
+app.get('/',(req,res)=>{
+    res.send('API is running');
+})
 
 app.listen(PORT,()=>{
     console.log(`server started at http://localhost:${PORT}`);
