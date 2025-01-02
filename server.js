@@ -11,9 +11,9 @@ const app=express();
 
 
 app.use(cors({
-    origin: 'https://wbuilder-frontend.vercel.app',
+    origin: ['https://wbuilder-frontend.vercel.app', 'http://localhost:5173'],
     credentials: true
-}));
+  }));
 
 const PORT=process.env.PORT || 5000;
 app.use(express.json());   //will allow us to parse req.body
