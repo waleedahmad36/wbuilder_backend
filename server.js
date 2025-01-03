@@ -9,7 +9,7 @@ import feedbackRoutes from './routes/feedbackRoutes.js';
 const app = express();
 
 app.use(cors({
-    origin: ['https://waleedweb.vercel.app', 'http://localhost:5173'],
+    origin: 'https://waleedweb.vercel.app',
     credentials: true,
 }));
 
