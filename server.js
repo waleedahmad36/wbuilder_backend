@@ -49,7 +49,7 @@ export default app;
 
 
 // app.use(cors({
-//     origin: ['https://wbuilder-frontend.vercel.app', 'http://localhost:5173'],
+//     origin: ['https://waleedweb.vercel.app', 'http://localhost:5173'],
 //     credentials: true
 //   }));
 
