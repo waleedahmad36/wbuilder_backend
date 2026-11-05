@@ -13,6 +13,8 @@ app.use(cors({
     credentials: true,
 }));
 
+app.use(express.json());
+app.use(cookieParser());
 
 app.use(async (req, res, next) => {
     try {
@@ -27,10 +29,6 @@ app.use(async (req, res, next) => {
         });
     }
 });
-
-
-app.use(express.json());
-app.use(cookieParser());
 
 app.use('/api/v1/auth', userRoutes);
 app.use('/api/v1/portfolio', portfolioRoutes);
