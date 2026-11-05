@@ -13,6 +13,22 @@ app.use(cors({
     credentials: true,
 }));
 
+
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        console.error("Database connection failed:", error.message);
+
+        res.status(503).json({
+            success: false,
+            message: "Database connection failed",
+        });
+    }
+});
+
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -24,10 +40,7 @@ app.get('/', (req, res) => {
     res.send('API is running');
 });
 
-// Connect to the database
-connectDB().catch((err) => {
-    console.error('Database connection failed:', err);
-});
+
 
 // Export app for serverless deployment
 export default app;
